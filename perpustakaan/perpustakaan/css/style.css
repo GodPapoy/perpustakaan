@@ -1,0 +1,102 @@
+/* ===== 1 WARNA BRAND ===== */
+:root {
+    --brand: #2563eb;
+    --brand-dark: #1e40af;
+    --brand-light: #dbeafe;
+    --text: #1f2937;
+    --bg: #f3f4f6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ===== NAVBAR (FLEXBOX) ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: var(--brand);
+    color: #fff;
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.navbar h1 { font-size: 1.4rem; }
+.navbar nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background .2s;
+}
+.navbar nav a:hover { background: var(--brand-dark); }
+
+/* ===== BOX MODEL: CARD ===== */
+.container {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.card {
+    background: #fff;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.card h2 {
+    color: var(--brand);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--brand-light);
+}
+
+/* ===== TABEL ===== */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 500px; }
+th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+thead th { background: var(--brand); color: #fff; }
+tbody tr:nth-child(even) { background: var(--brand-light); }
+tbody tr:hover { background: #bfdbfe; }
+
+.badge {
+    background: var(--brand-light);
+    color: var(--brand-dark);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: .85rem;
+    font-weight: 600;
+}
+.status { padding: 3px 10px; border-radius: 20px; font-size: .85rem; font-weight: 600; }
+.status.pinjam  { background: #fef3c7; color: #92400e; }
+.status.kembali { background: #d1fae5; color: #065f46; }
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 24px;
+    background: var(--brand-dark);
+    color: #fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; padding: 12px 16px; }
+    .navbar h1 { font-size: 1.15rem; }
+    .card { padding: 14px; }
+    th, td { padding: 8px; font-size: .9rem; }
+}
